@@ -1,0 +1,25 @@
+var campoInput = document.querySelector('#filtrar-tabela')
+
+campoInput.addEventListener("input", function () {
+    var pacientes = document.querySelectorAll(".paciente")
+    var digitado = this.value;
+    
+    if (digitado.length > 0) {
+       
+        pacientes.forEach(function (paciente) {
+            var tdNome = paciente.querySelector(".info-nome");
+            var nome = tdNome.textContent;
+            //Expressão regular para testar se conteudo existe,(Test) "i" = inSensitiv
+            var expressao = new RegExp(digitado,"i"); 
+            if (!expressao.test(nome)) {
+                paciente.classList.add("invisivel");
+            } else {
+                paciente.classList.remove("invisivel");
+            }
+        })
+    } else {
+        pacientes.forEach(function (paciente) {
+            paciente.classList.remove("invisivel")
+        })
+    }
+})
