@@ -1,2 +1,2 @@
 # cadastro_filtro_JavaScript
-Cadastro + filtro, e validações usando JavaScript
+Cadastro puro javaScript
